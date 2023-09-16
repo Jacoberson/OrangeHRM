@@ -5,8 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ForgotPasswordPage {
-    private WebDriver driver;
+public class ForgotPasswordPage extends BasePage {
     private static final String PAGE_URL = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/requestPasswordResetCode";
 
     @FindBy(name = "username")
@@ -22,9 +21,8 @@ public class ForgotPasswordPage {
     private WebElement requiredValidation;
 
     public ForgotPasswordPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
         driver.get(PAGE_URL);
-        PageFactory.initElements(driver, this);
     }
 
     public void enterUsername(String username) {

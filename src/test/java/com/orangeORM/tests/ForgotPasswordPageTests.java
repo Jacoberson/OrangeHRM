@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class ResetPasswordPageTests {
+public class ForgotPasswordPageTests {
     WebDriver driver;
 
     @BeforeMethod

@@ -3,10 +3,8 @@ package com.orangeORM.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
-    private WebDriver driver;
+public class LoginPage extends BasePage {
     private static final String PAGE_URL = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
 
     @FindBy(name = "username")
@@ -22,9 +20,8 @@ public class LoginPage {
     private WebElement alert;
 
     public LoginPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
         driver.get(PAGE_URL);
-        PageFactory.initElements(driver, this);
     }
 
     private void enterUsername(String username) {
