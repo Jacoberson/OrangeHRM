@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
     private WebDriver driver;
-    private static String PAGE_URL = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
+    private static final String PAGE_URL = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
 
     @FindBy(name = "username")
     private WebElement usernameField;

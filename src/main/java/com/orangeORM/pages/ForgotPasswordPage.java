@@ -18,25 +18,32 @@ public class ForgotPasswordPage {
     @FindBy(xpath = "//button[text()[contains(., 'Reset Password')]]")
     private WebElement resetPasswordButton;
 
+    @FindBy(xpath = "//*[text()[contains(., 'Required')]]")
+    private WebElement requiredValidation;
+
     public ForgotPasswordPage(WebDriver driver) {
         this.driver = driver;
         driver.get(PAGE_URL);
         PageFactory.initElements(driver, this);
     }
 
-    private void enterUsername(String username) {
+    public void enterUsername(String username) {
         usernameField.sendKeys(username);
     }
 
-    private void clickCancel() {
+    public void clickCancel() {
         cancelButton.click();
     }
 
-    private void clickResetPassword() {
+    public void clickResetPassword() {
         resetPasswordButton.click();
     }
 
     public boolean isOnPage() {
         return driver.getCurrentUrl() == PAGE_URL;
+    }
+
+    public boolean validationIsVisible() {
+        return requiredValidation.isDisplayed();
     }
 }
