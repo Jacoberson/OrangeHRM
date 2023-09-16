@@ -1,29 +1,16 @@
 package com.orangeORM.tests;
 
 import com.orangeORM.pages.ForgotPasswordPage;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class ForgotPasswordPageTests {
-    WebDriver driver;
-
-    @BeforeMethod
-    public void setup() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-    }
+public class ForgotPasswordPageTests extends BaseTest {
 
     @Test
     public void clickCancel() {
-        ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage(driver);
+        ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage(getDriver());
         forgotPasswordPage.clickCancel();
 
         Assert.assertFalse(forgotPasswordPage.isOnPage());
@@ -31,7 +18,7 @@ public class ForgotPasswordPageTests {
 
     @Test
     public void resetWithoutUsername() {
-        ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage(driver);
+        ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage(getDriver());
         forgotPasswordPage.clickResetPassword();
 
         Assert.assertTrue(forgotPasswordPage.validationIsVisible());
@@ -39,15 +26,10 @@ public class ForgotPasswordPageTests {
 
     @Test
     public void resetWithUsername() {
-        ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage(driver);
+        ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage(getDriver());
         forgotPasswordPage.enterUsername("Admin");
         forgotPasswordPage.clickResetPassword();
 
         Assert.assertFalse(forgotPasswordPage.isOnPage());
-    }
-
-    @AfterMethod
-    public void tearDown() {
-        driver.quit();
     }
 }
