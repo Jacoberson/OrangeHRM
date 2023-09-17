@@ -3,8 +3,7 @@
 <suite name="Logged In Suite">
     <test name="TestA1" allow-return-values="true">
         <classes>
-            <class name="com.orangeORM.tests.LoginPageTests" />
-            <class name="com.orangeORM.tests.ForgotPasswordPageTests" />
+            <class name="com.orangeORM.tests.DashboardTests" />
         </classes>
     </test>
 </suite>
