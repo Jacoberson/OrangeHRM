@@ -4,8 +4,6 @@ import com.orangeORM.pages.ForgotPasswordPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
-
 public class ForgotPasswordPageTests extends BaseTest {
 
     @Test
