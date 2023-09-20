@@ -67,15 +67,18 @@ public class LoginPage extends BasePage {
 
     private void clickSocialMediaIcon(String socialMediaSite) {
         switch(socialMediaSite) {
-            case "Linkedin":
+            case "LinkedIn":
                 linkedInIcon.click();
                 break;
             case "Facebook":
                 facebookIcon.click();
+                break;
             case "Twitter":
                 twitterIcon.click();
+                break;
             case "YouTube":
                 youTubeIcon.click();
+                break;
         }
 
         List<String> browserTabs = new ArrayList<>(driver.getWindowHandles());
@@ -84,6 +87,8 @@ public class LoginPage extends BasePage {
 
     public boolean isSocialMediaOpened(String socialMediaSite) {
         clickSocialMediaIcon(socialMediaSite);
-        return driver.getCurrentUrl().contains(socialMediaSite);
+
+        String lowercaseSite = socialMediaSite.toLowerCase();
+        return driver.getCurrentUrl().contains(lowercaseSite);
     }
 }
