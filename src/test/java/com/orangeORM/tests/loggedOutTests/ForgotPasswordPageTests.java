@@ -1,6 +1,7 @@
-package com.orangeORM.tests;
+package com.orangeORM.tests.loggedOutTests;
 
-import com.orangeORM.pages.ForgotPasswordPage;
+import com.orangeORM.pages.loggedOutPages.ForgotPasswordPage;
+import com.orangeORM.tests.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

@@ -3,8 +3,8 @@
 <suite name="Not Logged In Suite">
     <test name="Not Logged In Tests" allow-return-values="true">
         <classes>
-            <class name="com.orangeORM.tests.LoginPageTests"/>
-            <class name="com.orangeORM.tests.ForgotPasswordPageTests"/>
+            <class name="com.orangeORM.tests.loggedOutTests.LoginPageTests"/>
+            <class name="com.orangeORM.tests.loggedOutTests.ForgotPasswordPageTests"/>
         </classes>
     </test>
 </suite>

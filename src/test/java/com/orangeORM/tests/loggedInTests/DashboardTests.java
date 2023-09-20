@@ -1,6 +1,6 @@
-package com.orangeORM.tests;
+package com.orangeORM.tests.loggedInTests;
 
-import com.orangeORM.pages.DashboardPage;
+import com.orangeORM.pages.loggedInPages.DashboardPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

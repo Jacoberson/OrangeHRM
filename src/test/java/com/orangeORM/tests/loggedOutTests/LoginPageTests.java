@@ -1,9 +1,9 @@
-package com.orangeORM.tests;
+package com.orangeORM.tests.loggedOutTests;
 
-import com.orangeORM.pages.LoginPage;
+import com.orangeORM.pages.loggedOutPages.LoginPage;
+import com.orangeORM.tests.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class LoginPageTests extends BaseTest {

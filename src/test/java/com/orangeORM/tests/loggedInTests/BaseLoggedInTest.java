@@ -1,6 +1,7 @@
-package com.orangeORM.tests;
+package com.orangeORM.tests.loggedInTests;
 
-import com.orangeORM.pages.LoginPage;
+import com.orangeORM.pages.loggedOutPages.LoginPage;
+import com.orangeORM.tests.BaseTest;
 import org.testng.annotations.BeforeMethod;
 
 public class BaseLoggedInTest extends BaseTest {
