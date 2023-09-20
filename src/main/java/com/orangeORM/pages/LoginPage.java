@@ -4,6 +4,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class LoginPage extends BasePage {
     private static final String PAGE_URL = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
 
@@ -18,6 +21,18 @@ public class LoginPage extends BasePage {
 
     @FindBy(xpath = "//p[contains(@class, 'alert-content-text')]")
     private WebElement alert;
+
+    @FindBy(css = "a[href*='linkedin']")
+    private WebElement linkedInIcon;
+
+    @FindBy(css = "a[href*='facebook']")
+    private WebElement facebookIcon;
+
+    @FindBy(css = "a[href*='twitter']")
+    private WebElement twitterIcon;
+
+    @FindBy(css = "a[href*='youtube']")
+    private WebElement youTubeIcon;
 
     public LoginPage(WebDriver driver) {
         super(driver);
@@ -50,4 +65,25 @@ public class LoginPage extends BasePage {
         return alert.isDisplayed();
     }
 
+    private void clickSocialMediaIcon(String socialMediaSite) {
+        switch(socialMediaSite) {
+            case "Linkedin":
+                linkedInIcon.click();
+                break;
+            case "Facebook":
+                facebookIcon.click();
+            case "Twitter":
+                twitterIcon.click();
+            case "YouTube":
+                youTubeIcon.click();
+        }
+
+        List<String> browserTabs = new ArrayList<>(driver.getWindowHandles());
+        driver.switchTo().window(browserTabs.get(1));
+    }
+
+    public boolean isSocialMediaOpened(String socialMediaSite) {
+        clickSocialMediaIcon(socialMediaSite);
+        return driver.getCurrentUrl().contains(socialMediaSite);
+    }
 }
