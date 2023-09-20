@@ -36,6 +36,9 @@ public class DashboardPage extends BasePage {
     @FindBy(xpath = "//div[contains(@class, 'orangehrm-dashboard-grid')]/div[contains(@class, 'oxd-grid-item')]")
     private List<WebElement> widgets;
 
+    @FindBy(xpath = "//span[text()='Admin']")
+    private WebElement adminLink;
+
     public DashboardPage(WebDriver driver) {
         super(driver);
     }
@@ -90,5 +93,13 @@ public class DashboardPage extends BasePage {
     public boolean helpPageOpened() {
         clickHelpIcon();
         return driver.getCurrentUrl().equals(HELP_PAGE_URL);
+    }
+
+    public void clickSideLink(String elementToClick) {
+        switch(elementToClick) {
+            case "Admin":
+                adminLink.click();
+                break;
+        }
     }
 }

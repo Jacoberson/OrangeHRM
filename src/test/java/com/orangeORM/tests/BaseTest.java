@@ -17,7 +17,7 @@ public class BaseTest {
     @BeforeMethod
     public void setup() {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless=new");
+//        options.addArguments("--headless=new");
 
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(options);
